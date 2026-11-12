@@ -44,6 +44,7 @@ public:
 private:
     std::int64_t num_;
     std::int64_t den_;
+    
     void check();
 };
 
