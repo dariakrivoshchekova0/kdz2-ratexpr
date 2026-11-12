@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
+
 project(kdz2_ratexpr LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
