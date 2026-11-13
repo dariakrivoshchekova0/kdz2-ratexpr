@@ -8,7 +8,7 @@ namespace ratexpr {
     Fraction::Fraction(std::int64_t numerator, std::int64_t denominator)
     : num_(numerator), den_(denominator) {
         if(den_==0){
-            throw std::invalid_argument("Деление на ноль!");
+            throw std::invalid_argument("std::invalid_argument");
         }
         check();
     }
@@ -59,7 +59,7 @@ namespace ratexpr {
 
     Fraction& Fraction::operator/=(const Fraction& o){
         if (o.num_ == 0) {
-            throw std::invalid_argument("Деление на ноль!");
+            throw std::invalid_argument("std::invalid_argument");
         }
         num_=num_*o.den_;
         den_=den_*o.num_;
@@ -132,4 +132,4 @@ namespace ratexpr {
         return os;
     }
 
-};
+}

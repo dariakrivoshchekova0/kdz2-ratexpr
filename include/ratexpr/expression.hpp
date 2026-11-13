@@ -41,6 +41,7 @@ protected:
 };
 
 class Add : public BinaryExpression { 
+public:    
     Add(std::unique_ptr<Expression> lhs,
         std::unique_ptr<Expression> rhs);
     Fraction evaluate() const override;
@@ -48,6 +49,7 @@ class Add : public BinaryExpression {
  }; 
 
 class Sub : public BinaryExpression { 
+public:    
     Sub(std::unique_ptr<Expression> lhs,
         std::unique_ptr<Expression> rhs);
     Fraction evaluate() const override;
@@ -55,6 +57,7 @@ class Sub : public BinaryExpression {
  }; 
 
 class Mul : public BinaryExpression { 
+public:    
     Mul(std::unique_ptr<Expression> lhs,
         std::unique_ptr<Expression> rhs);
     Fraction evaluate() const override;
@@ -62,6 +65,7 @@ class Mul : public BinaryExpression {
  }; 
 
 class Div : public BinaryExpression { 
+public:    
     Div(std::unique_ptr<Expression> lhs,
         std::unique_ptr<Expression> rhs);
     Fraction evaluate() const override;

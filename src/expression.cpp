@@ -37,8 +37,8 @@ Fraction Add::evaluate() const {
 void Add::print(std::ostream& os) const {
     os<<"(";
     lhs_->print(os);
-    os<<"+";
-    lhs_->print(os);
+    os<<" + ";
+    rhs_->print(os);
     os<<")";
 }
 
@@ -50,8 +50,8 @@ Fraction Sub::evaluate() const {
 void Sub::print(std::ostream& os) const {
     os<<"(";
     lhs_->print(os);
-    os<<"-";
-    lhs_->print(os);
+    os<<" - ";
+    rhs_->print(os);
     os<<")";
 }
 
@@ -63,8 +63,8 @@ Fraction Mul::evaluate() const {
 void Mul::print(std::ostream& os) const {
     os<<"(";
     lhs_->print(os);
-    os<<"*";
-    lhs_->print(os);
+    os<<" * ";
+    rhs_->print(os);
     os<<")";
 }
 
@@ -76,8 +76,8 @@ Fraction Div::evaluate() const {
 void Div::print(std::ostream& os) const {
     os<<"(";
     lhs_->print(os);
-    os<<"/";
-    lhs_->print(os);
+    os<<" / ";
+    rhs_->print(os);
     os<<")";
 }
 
