@@ -73,7 +73,6 @@ void experiment(const std::string& name,std::unique_ptr<Expression> (*x)()) {
         originalTime += std::chrono::duration<double, std::milli>(end - start).count();
 
         auto simplified = x();
-
         start = Clock::now();
 
         simplification(simplified);
@@ -114,6 +113,7 @@ void experiment(const std::string& name,std::unique_ptr<Expression> (*x)()) {
     std::cout << "Всего симплификация занимает: "<< simplifiedTime << " ms\n";
     std::cout << evaluates << " вычислений без симплификации: "<< originalTime * evaluates << " ms\n";
     std::cout << "симплификация и " << evaluates << " вычислений: " << simplificationTime + evaluationTime * evaluates << " ms\n";
+
 }
 
 int main() {

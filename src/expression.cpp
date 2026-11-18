@@ -269,19 +269,20 @@ BinaryExpression* x = dynamic_cast<BinaryExpression*>(expr.get());
             return;
         }
 
-        Negative* neg_right =dynamic_cast<Negative*>(x->rhs_.get());
+        Negative* neg_right = dynamic_cast<Negative*>(x->rhs_.get());
 
-        if (neg_right != nullptr && x->lhs_->equals(neg_right->operand())) {
+        if (neg_right != nullptr && x->lhs_->equals(neg_right->operand()) && !x->lhs_->canThrow()) {
             expr = std::make_unique<Const>(Fraction(0));
             return;
         }
 
-        Negative* neg_left =dynamic_cast<Negative*>(x->lhs_.get());
+        Negative* neg_left = dynamic_cast<Negative*>(x->lhs_.get());
 
-        if (neg_left != nullptr && neg_left->operand().equals(*x->rhs_)) {
+        if (neg_left != nullptr && neg_left->operand().equals(*x->rhs_) && !x->rhs_->canThrow()) {
             expr = std::make_unique<Const>(Fraction(0));
             return;
         }
+        
     }
     
     if (dynamic_cast<Sub*>(x) != nullptr) {
@@ -298,7 +299,7 @@ BinaryExpression* x = dynamic_cast<BinaryExpression*>(expr.get());
             return;
         }
 
-        if (x->lhs_->equals(*x->rhs_)) {
+        if (x->lhs_->equals(*x->rhs_) && !left->canThrow()) {
             expr = std::make_unique<Const>(Fraction(0));
             return;
         }   
