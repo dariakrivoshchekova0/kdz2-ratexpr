@@ -132,4 +132,12 @@ namespace ratexpr {
         return os;
     }
 
+    bool Fraction::operator==(const Fraction& o) const {
+        return num_ == o.num_ && den_ == o.den_;
+    }
+
+    bool Fraction::operator!=(const Fraction& o) const {
+        return !(*this == o);
+    }
+
 }

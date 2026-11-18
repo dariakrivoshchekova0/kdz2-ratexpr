@@ -41,6 +41,9 @@ public:
     
     friend std::ostream& operator<<(std::ostream& os, const Fraction& f);
 
+    bool operator==(const Fraction& o) const;
+    bool operator!=(const Fraction& o) const;
+
 private:
     std::int64_t num_;
     std::int64_t den_;
